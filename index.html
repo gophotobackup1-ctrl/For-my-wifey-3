@@ -23,12 +23,11 @@ body{
 .card{
   width:90%;
   max-width:420px;
-  background:rgba(255,255,255,0.9);
+  background:rgba(255,255,255,0.92);
   border-radius:25px;
   padding:25px;
   text-align:center;
   box-shadow:0 15px 35px rgba(0,0,0,0.15);
-  position:relative;
 }
 
 h1{
@@ -59,10 +58,6 @@ button:hover{
   transform:scale(1.05);
 }
 
-.hidden{
-  display:none;
-}
-
 /* floating hearts */
 .heart{
   position:fixed;
@@ -74,23 +69,19 @@ button:hover{
   to{transform:translateY(-110vh);opacity:0}
 }
 
-/* hug button */
+/* hug */
 #hug{
   font-size:50px;
   cursor:pointer;
   margin-top:15px;
-  transition:0.2s;
 }
-#hug:active{
-  transform:scale(1.2);
-}
-
 .signature{
   margin-top:15px;
   font-family:'Pacifico',cursive;
   color:#ff4d6d;
   font-size:1.3rem;
 }
+.hidden{display:none}
 </style>
 </head>
 
@@ -98,28 +89,27 @@ button:hover{
 
 <div class="card">
 
-  <h1 id="title">Hi Emma 🌸</h1>
+  <h1 id="title">Hey babe 💗</h1>
 
   <p id="text">
-    I made this little space just for you.<br><br>
-    Nothing big, nothing complicated…<br>
-    just something soft, like the way you make things feel.
+    I made this just for you, Emma.<br><br>
+    It’s nothing big…<br>
+    just something soft,<br>
+    something that feels a little like you.
   </p>
 
-  <button onclick="next()">Tap here 💗</button>
+  <button onclick="next()">Tap here 💖</button>
 
-  <!-- hidden hug section -->
-  <div id="hugSection" class="hidden">
-    <p style="margin-top:15px">
-      If you were here right now…<br>
-      I’d probably just give you a quiet hug 🫂
-    </p>
+  <div id="extra" class="hidden">
+    <p id="extraText" style="margin-top:15px"></p>
+  </div>
 
+  <div id="hugBox" class="hidden">
     <div id="hug" onclick="hug()">🫂</div>
     <p id="hugText"></p>
   </div>
 
-  <div class="signature hidden" id="sign">— pwkie</div>
+  <div id="sign" class="signature hidden">— pwkie</div>
 
 </div>
 
@@ -132,58 +122,59 @@ function next(){
   if(step === 1){
     title.innerHTML = "Emma 💖";
     text.innerHTML = `
-      You have this really gentle way<br>
-      of making things feel nicer.<br><br>
-      Even normal moments feel a little softer<br>
-      when you're around.
+      You know…<br><br>
+      you have this way of making everything<br>
+      feel a little warmer.<br><br>
+      Even the smallest moments feel special<br>
+      when it’s you.
     `;
   }
 
   else if(step === 2){
-    title.innerHTML = "Just something small… ✨";
+    title.innerHTML = "babe… ✨";
     text.innerHTML = `
-      I hope you smile a little today.<br><br>
-      And if things ever feel heavy,<br>
-      just remember… someone out there<br>
-      thinks you're genuinely special.
+      I don’t always say it properly,<br>
+      but I really like having you in my life.<br><br>
+      You make things lighter,<br>
+      easier,<br>
+      and honestly… happier.
     `;
   }
 
   else if(step === 3){
-    title.innerHTML = "One more thing 🌷";
+    title.innerHTML = "just saying 💗";
     text.innerHTML = `
-      You don’t even try,<br>
-      but you still manage to be<br>
-      someone people feel comfortable with.<br><br>
-      That’s rare, Emma.
+      If I had to choose<br>
+      a favorite person to talk to,<br>
+      laugh with,<br>
+      or just sit quietly with…<br><br>
+      it would still be you, babe.
     `;
   }
 
   else if(step === 4){
-    title.innerHTML = "Okay… last thing 💗";
+    title.innerHTML = "one small thing 🫂";
     text.innerHTML = `
-      If I could send one thing through this screen…<br><br>
-      it would probably just be<br>
-      a small, warm hug.
+      If you were here right now,<br><br>
+      I’d probably just pull you closer<br>
+      and not say anything at all.
     `;
-
-    document.getElementById("hugSection").classList.remove("hidden");
+    document.getElementById("hugBox").classList.remove("hidden");
   }
 
   else if(step === 5){
-    title.innerHTML = "That’s it 🌸";
+    title.innerHTML = "last thing 💖";
     text.innerHTML = `
-      Nothing dramatic.<br><br>
-      Just something soft,<br>
-      just for you.
+      I’m really glad it’s you.<br><br>
+      Out of everything,<br>
+      it being you… just feels right.
     `;
-
     document.getElementById("sign").classList.remove("hidden");
   }
 }
 
 function hug(){
-  document.getElementById("hugText").innerHTML = "…there you go 💖";
+  document.getElementById("hugText").innerHTML = "come here babe 💗";
 }
 
 /* floating hearts */
