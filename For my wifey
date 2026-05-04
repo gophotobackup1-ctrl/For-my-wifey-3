@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Emma 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  min-height:100vh;
+  background:linear-gradient(135deg,#ffd6e8,#fff0f6,#e6f7ff);
+  font-family:'Poppins',sans-serif;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+
+.card{
+  width:90%;
+  max-width:420px;
+  background:rgba(255,255,255,0.9);
+  border-radius:25px;
+  padding:25px;
+  text-align:center;
+  box-shadow:0 15px 35px rgba(0,0,0,0.15);
+  position:relative;
+}
+
+h1{
+  font-family:'Pacifico',cursive;
+  color:#ff4d6d;
+  font-size:2.2rem;
+  margin-bottom:10px;
+}
+
+p{
+  font-size:0.95rem;
+  color:#444;
+  line-height:1.7;
+}
+
+button{
+  margin-top:20px;
+  padding:12px 25px;
+  border:none;
+  border-radius:30px;
+  background:#ff4d6d;
+  color:white;
+  font-size:1rem;
+  cursor:pointer;
+  transition:0.3s;
+}
+button:hover{
+  transform:scale(1.05);
+}
+
+.hidden{
+  display:none;
+}
+
+/* floating hearts */
+.heart{
+  position:fixed;
+  bottom:-20px;
+  font-size:20px;
+  animation:float 6s linear infinite;
+}
+@keyframes float{
+  to{transform:translateY(-110vh);opacity:0}
+}
+
+/* hug button */
+#hug{
+  font-size:50px;
+  cursor:pointer;
+  margin-top:15px;
+  transition:0.2s;
+}
+#hug:active{
+  transform:scale(1.2);
+}
+
+.signature{
+  margin-top:15px;
+  font-family:'Pacifico',cursive;
+  color:#ff4d6d;
+  font-size:1.3rem;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <h1 id="title">Hi Emma 🌸</h1>
+
+  <p id="text">
+    I made this little space just for you.<br><br>
+    Nothing big, nothing complicated…<br>
+    just something soft, like the way you make things feel.
+  </p>
+
+  <button onclick="next()">Tap here 💗</button>
+
+  <!-- hidden hug section -->
+  <div id="hugSection" class="hidden">
+    <p style="margin-top:15px">
+      If you were here right now…<br>
+      I’d probably just give you a quiet hug 🫂
+    </p>
+
+    <div id="hug" onclick="hug()">🫂</div>
+    <p id="hugText"></p>
+  </div>
+
+  <div class="signature hidden" id="sign">— pwkie</div>
+
+</div>
+
+<script>
+let step = 0;
+
+function next(){
+  step++;
+
+  if(step === 1){
+    title.innerHTML = "Emma 💖";
+    text.innerHTML = `
+      You have this really gentle way<br>
+      of making things feel nicer.<br><br>
+      Even normal moments feel a little softer<br>
+      when you're around.
+    `;
+  }
+
+  else if(step === 2){
+    title.innerHTML = "Just something small… ✨";
+    text.innerHTML = `
+      I hope you smile a little today.<br><br>
+      And if things ever feel heavy,<br>
+      just remember… someone out there<br>
+      thinks you're genuinely special.
+    `;
+  }
+
+  else if(step === 3){
+    title.innerHTML = "One more thing 🌷";
+    text.innerHTML = `
+      You don’t even try,<br>
+      but you still manage to be<br>
+      someone people feel comfortable with.<br><br>
+      That’s rare, Emma.
+    `;
+  }
+
+  else if(step === 4){
+    title.innerHTML = "Okay… last thing 💗";
+    text.innerHTML = `
+      If I could send one thing through this screen…<br><br>
+      it would probably just be<br>
+      a small, warm hug.
+    `;
+
+    document.getElementById("hugSection").classList.remove("hidden");
+  }
+
+  else if(step === 5){
+    title.innerHTML = "That’s it 🌸";
+    text.innerHTML = `
+      Nothing dramatic.<br><br>
+      Just something soft,<br>
+      just for you.
+    `;
+
+    document.getElementById("sign").classList.remove("hidden");
+  }
+}
+
+function hug(){
+  document.getElementById("hugText").innerHTML = "…there you go 💖";
+}
+
+/* floating hearts */
+setInterval(()=>{
+  const h=document.createElement('div');
+  h.className='heart';
+  h.innerHTML='💗';
+  h.style.left=Math.random()*100+'vw';
+  h.style.animationDuration=4+Math.random()*3+'s';
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),7000);
+},600);
+</script>
+
+</body>
+</html>
