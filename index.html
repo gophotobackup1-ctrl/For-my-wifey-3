@@ -3,52 +3,52 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Emma 💖</title>
+<title>For Emma 🌸</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 
 body{
   min-height:100vh;
-  background:linear-gradient(135deg,#ffd6e8,#fff0f6,#e6f7ff);
-  font-family:'Poppins',sans-serif;
+  background:linear-gradient(135deg,#ffe4ec,#fdf6ff,#eaf7ff);
   display:flex;
   align-items:center;
   justify-content:center;
+  font-family:'Poppins',sans-serif;
   overflow:hidden;
 }
 
 .card{
   width:90%;
-  max-width:420px;
-  background:rgba(255,255,255,0.92);
+  max-width:480px;
+  background:rgba(255,255,255,0.9);
   border-radius:25px;
-  padding:25px;
+  padding:30px;
   text-align:center;
-  box-shadow:0 15px 35px rgba(0,0,0,0.15);
+  box-shadow:0 20px 40px rgba(0,0,0,0.12);
 }
 
 h1{
-  font-family:'Pacifico',cursive;
-  color:#ff4d6d;
-  font-size:2.2rem;
-  margin-bottom:10px;
+  font-family:'Playfair Display',serif;
+  font-size:2rem;
+  color:#d14a7c;
+  margin-bottom:15px;
 }
 
 p{
   font-size:0.95rem;
   color:#444;
-  line-height:1.7;
+  line-height:1.8;
 }
 
 button{
-  margin-top:20px;
-  padding:12px 25px;
+  margin-top:25px;
+  padding:12px 26px;
   border:none;
   border-radius:30px;
-  background:#ff4d6d;
+  background:#d14a7c;
   color:white;
   font-size:1rem;
   cursor:pointer;
@@ -58,27 +58,22 @@ button:hover{
   transform:scale(1.05);
 }
 
-/* floating hearts */
-.heart{
+/* floating petals */
+.petal{
   position:fixed;
-  bottom:-20px;
-  font-size:20px;
-  animation:float 6s linear infinite;
+  top:-20px;
+  font-size:18px;
+  animation:fall 7s linear infinite;
 }
-@keyframes float{
-  to{transform:translateY(-110vh);opacity:0}
+@keyframes fall{
+  to{transform:translateY(110vh);opacity:0}
 }
 
-/* hug */
-#hug{
-  font-size:50px;
-  cursor:pointer;
-  margin-top:15px;
-}
+/* final */
 .signature{
   margin-top:15px;
-  font-family:'Pacifico',cursive;
-  color:#ff4d6d;
+  font-family:'Playfair Display',serif;
+  color:#d14a7c;
   font-size:1.3rem;
 }
 .hidden{display:none}
@@ -89,27 +84,18 @@ button:hover{
 
 <div class="card">
 
-  <h1 id="title">Hey babe 💗</h1>
+  <h1 id="title">Emma 🌸</h1>
 
   <p id="text">
-    I made this just for you, Emma.<br><br>
-    It’s nothing big…<br>
-    just something soft,<br>
-    something that feels a little like you.
+    I didn’t make this to say something big.<br><br>
+    Just something honest.<br><br>
+    Something quiet…<br>
+    like the way you make everything feel.
   </p>
 
-  <button onclick="next()">Tap here 💖</button>
+  <button onclick="next()">Continue</button>
 
-  <div id="extra" class="hidden">
-    <p id="extraText" style="margin-top:15px"></p>
-  </div>
-
-  <div id="hugBox" class="hidden">
-    <div id="hug" onclick="hug()">🫂</div>
-    <p id="hugText"></p>
-  </div>
-
-  <div id="sign" class="signature hidden">— pwkie</div>
+  <div id="end" class="hidden signature">— pwkie</div>
 
 </div>
 
@@ -120,73 +106,70 @@ function next(){
   step++;
 
   if(step === 1){
-    title.innerHTML = "Emma 💖";
+    title.innerHTML = "You 🌷";
     text.innerHTML = `
-      You know…<br><br>
-      you have this way of making everything<br>
-      feel a little warmer.<br><br>
-      Even the smallest moments feel special<br>
-      when it’s you.
+      There’s something about you<br>
+      that makes things feel softer.<br><br>
+      Not louder.<br>
+      Not dramatic.<br><br>
+      Just… better.
     `;
   }
 
   else if(step === 2){
-    title.innerHTML = "babe… ✨";
+    title.innerHTML = "In a simple way ✨";
     text.innerHTML = `
-      I don’t always say it properly,<br>
-      but I really like having you in my life.<br><br>
-      You make things lighter,<br>
-      easier,<br>
-      and honestly… happier.
+      It’s not just the big moments.<br><br>
+      It’s the small ones.<br>
+      The normal ones.<br><br>
+      Somehow, with you…<br>
+      even those feel different.
     `;
   }
 
   else if(step === 3){
-    title.innerHTML = "just saying 💗";
+    title.innerHTML = "And I noticed 💗";
     text.innerHTML = `
-      If I had to choose<br>
-      a favorite person to talk to,<br>
-      laugh with,<br>
-      or just sit quietly with…<br><br>
-      it would still be you, babe.
+      I don’t always say it out loud,<br>
+      but I notice you.<br><br>
+      The way you are.<br>
+      The way you care.<br><br>
+      It stays with me.
     `;
   }
 
   else if(step === 4){
-    title.innerHTML = "one small thing 🫂";
+    title.innerHTML = "Just this 🌸";
     text.innerHTML = `
-      If you were here right now,<br><br>
-      I’d probably just pull you closer<br>
-      and not say anything at all.
+      I’m really glad it’s you.<br><br>
+      Not for any big reason.<br><br>
+      Just because…<br>
+      it feels right.
     `;
-    document.getElementById("hugBox").classList.remove("hidden");
   }
 
   else if(step === 5){
-    title.innerHTML = "last thing 💖";
+    title.innerHTML = "Emma 💖";
     text.innerHTML = `
-      I’m really glad it’s you.<br><br>
-      Out of everything,<br>
-      it being you… just feels right.
+      You make things feel calm,<br>
+      warm,<br>
+      and a little more meaningful.<br><br>
+      And I wouldn’t change that for anything.
     `;
-    document.getElementById("sign").classList.remove("hidden");
+    document.getElementById("end").classList.remove("hidden");
   }
 }
 
-function hug(){
-  document.getElementById("hugText").innerHTML = "come here babe 💗";
-}
-
-/* floating hearts */
+/* petals */
 setInterval(()=>{
-  const h=document.createElement('div');
-  h.className='heart';
-  h.innerHTML='💗';
-  h.style.left=Math.random()*100+'vw';
-  h.style.animationDuration=4+Math.random()*3+'s';
-  document.body.appendChild(h);
-  setTimeout(()=>h.remove(),7000);
-},600);
+  const p=document.createElement('div');
+  p.className='petal';
+  p.innerHTML='🌸';
+  p.style.left=Math.random()*100+'vw';
+  p.style.animationDuration=5+Math.random()*3+'s';
+  document.body.appendChild(p);
+  setTimeout(()=>p.remove(),8000);
+},700);
 </script>
 
 </body>
